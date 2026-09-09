@@ -7,13 +7,13 @@
     },
     {
       "name": "MIRSHIFT.INS",
-      "sha256": "95d961be799cee1cd0fde532104c6bf86205d252929fdf8f93b6e4d964d884f6",
+      "sha256": "7c1dde428ed4d36014b8a2c708e857d44a45938f72ac40194728f000009611d5",
       "size": 3303
     },
     {
       "name": "MIRSHIFT.PKG",
-      "sha256": "ae9b5399ee7235f54ad365f93c9b573333bed1c06389f529154284230b27fa19",
-      "size": 40965
+      "sha256": "e976fc3e9f90eda7337f769c8f21a88d16e19e90a83bf4ac767173fcddf0bd38",
+      "size": 40953
     },
     {
       "name": "MIRSHIFT.SCR",
