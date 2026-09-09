@@ -1,0 +1,44 @@
+{
+  "schema": 2,
+  "product": {
+    "name": "Mirror Shift",
+    "slug": "mirrorshift",
+    "stem": "MIRSHIFT"
+  },
+  "repository": {
+    "path": "../.."
+  },
+  "capabilities": {
+    "network": true,
+    "configuration": true,
+    "mutable_storage": true,
+    "clock": true
+  },
+  "installer": {
+    "manifest": "installer.json",
+    "output": "../../build/spectranext-resource",
+    "preview": "../../build/installer-preview.png"
+  },
+  "artifacts": [
+    {
+      "path": "release/Spectranext/MIRSHIFT.tap",
+      "role": "TAPE"
+    },
+    {
+      "path": "release/Spectranext/MIRSHIFT.OVL",
+      "role": "OVLY"
+    },
+    {
+      "path": "release/Spectranext/MIRSHIFT.DAT",
+      "role": "DATA"
+    },
+    {
+      "path": "build/spectranext-resource/boot.zx",
+      "role": "BOOT"
+    },
+    {
+      "path": "build/spectranext-resource/package.json",
+      "role": "MANIFEST"
+    }
+  ]
+}

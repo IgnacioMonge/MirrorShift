@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Mirror Shift
+Comment=Online Mirror Shift over Direct TCP or MQTT
+Exec=MirrorShift
+Icon=mirrorshift
+Terminal=false
+Categories=Game;BoardGame;Network;

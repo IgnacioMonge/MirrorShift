@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "code_bin": 35737,
+    "dat": 1004,
+    "ovl": 23350,
+    "tap": 35817
+  },
+  "code": {
+    "bss_trim_saved_bytes": 476,
+    "full_bytes": 35737,
+    "resident_bytes": 35261,
+    "trimmed_bytes": 35261
+  },
+  "markers": {
+    "TAR__register_sp": "0xFF58",
+    "__BSS_END_tail": "0xFB99",
+    "__BSS_head": "0xF9BE",
+    "__CODE_head": "0x7000",
+    "__CODE_tail": "0x700B",
+    "__DATA_head": "0xF994",
+    "__data_compiler_tail": "0xF9BD",
+    "__register_sp": "0xFF58",
+    "_overlay_code_slot": "0x6800"
+  },
+  "memory": {
+    "bss_bytes": 475,
+    "bss_end": "0xFB99",
+    "bss_head": "0xF9BE",
+    "ram_end": "0xFB99",
+    "register_sp": "0xFF58",
+    "register_sp_gap_bytes": 959,
+    "stack_guard": "0xFE00",
+    "stack_guard_gap_bytes": 615
+  },
+  "origin": 28672,
+  "overlays": {
+    "ABOUT": 7,
+    "BOARD": 462,
+    "CONFIG": 1794,
+    "CONTROL": 1018,
+    "DIRECT": 1923,
+    "FILEUI": 1865,
+    "GUI_LOG": 1946,
+    "HINTS": 0,
+    "INPUT_EDIT": 1054,
+    "MENU_CONFIG": 1849,
+    "MENU_LOGIC": 911,
+    "MQTT_CONNECT": 1820,
+    "MQTT_TX": 1975,
+    "NOTICES": 1132,
+    "RESTORE": 1890,
+    "RULES": 262,
+    "SAVELOAD": 1248,
+    "SETUP": 1820,
+    "STATUS": 0,
+    "TIME_CONFIG": 1406,
+    "total": 23350
+  },
+  "version": 1
+}

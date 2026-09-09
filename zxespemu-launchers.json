@@ -1,0 +1,51 @@
+{
+  "schema": 2,
+  "owner": "mirrorshift",
+  "version": "1.0.0",
+  "launchers": [
+    {
+      "name": "Mirror Shift ZX",
+      "bundle_id": "org.mirrorshift.zx",
+      "arguments": [
+        "--program", "artifact",
+        "--artifact", "./release/MIRSHIFT.tap",
+        "--storage", "./release",
+        "--model", "zxuno",
+        "--require-uart"
+      ],
+      "icon": "./client/mirrorshift.png"
+    },
+    {
+      "name": "Mirror Shift Next",
+      "bundle_id": "org.mirrorshift.next",
+      "arguments": [
+        "--program", "artifact",
+        "--artifact", "./release/Next/MIRSHIFT.nex",
+        "--model", "next",
+        "--require-uart"
+      ],
+      "icon": "./client/mirrorshift.png"
+    },
+    {
+      "name": "Mirror Shift SpectraNext",
+      "bundle_id": "io.github.ignaciomonge.mirrorshift.spectranext",
+      "runtime": "fusex",
+      "arguments": [
+        "--program", "spectranext",
+        "--spectranext-manifest", "./packaging/spectranext/port.json"
+      ],
+      "icon": "./client/mirrorshift.png"
+    },
+    {
+      "name": "Mirror Shift SpectraNext Installer",
+      "bundle_id": "io.github.ignaciomonge.mirrorshift.spectranext.installer",
+      "runtime": "fusex",
+      "mode": "installer",
+      "arguments": [
+        "--program", "spectranext",
+        "--spectranext-manifest", "./packaging/spectranext/port.json"
+      ],
+      "icon": "./client/mirrorshift.png"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# NetChessZX optimization policy — read by optimize-z80 / shrink-z80 skills.
+# Policy beats auto-detection; forbidden.* = true means REJECT, not demote.
+# Gates are measured acceptance limits; update only from same-build artifacts.
+
+target = "zx-spectrum"            # primary target; per-target gates in [targets]
+profile = "mixed-c-asm-overlays"
+priority = ["resident-size", "ux", "maintainability"]
+
+[forbidden]
+undocumented = true               # opt-in per experiment only (Next core ok, emulator fidelity unproven)
+smc = true                        # release maintainability
+sp_abuse = true                   # no stack blitting; UART ISR + esxDOS live here
+interrupt_windows = false         # overlay execs under DI are an established project pattern
+hardware_timing = true            # chess app; no beam racing / floating bus
+# Banking is allowed only for measured cold code/data splits that preserve the
+# 48K product, keep mutable session state resident, avoid nested overlays and
+# pass every target's size/stack/ABI gates. Moving the hot canonical reducer or
+# raising a resident allowance remains an explicit architecture decision.
+banking_changes = false
+
+[constraints]
+cpu_floor = "nmos-z80"            # real 48K Spectrums
+overlay_size = 2048               # Classic slot at 0x6800; Next NEX code cap4096
+maintainability = "release"
+abi_check = true                  # make abi-check
+size_check = true                 # make size-check
+module_guards = true              # make module-guards
+
+[build]
+command = "make NO_COLOR=1 PYTHON=C:/Progra~1/Python311/python.exe SIZE_CHECK_FLAGS=--fail-on-growth test abi-check size-check nex-size-report"
+
+# --- Extension: per-target acceptance gates (multi-target rule) ---
+# A candidate is accepted only when EVERY target below meets its resident
+# ceiling AND its stack-gap floor, measured per target on the same build.
+# Builds are serial because targets share generated objects.
+
+[targets.zx]
+artifact = "build/MIRSHIFT.map"
+resident_ceiling = 34437          # accepted 2026-08-06 render-speed baseline
+stack_gap_floor = 1851
+
+[targets.next-nex]
+artifact = "build/nex/MIRSHIFT.map"
+resident_ceiling = 35272          # accepted 2026-08-20 transport-hardening build
+stack_gap_floor = 3072            # paged Next safety floor; measured4681 on2026-09-05
+
+[targets.spectranext]
+artifact = "build/spectranext/MIRSHIFT.map"
+resident_ceiling = 35822          # 2026-08-28 measured snapshot; not a healthy budget
+stack_gap_floor = 513             # 1 byte above hard floor 512; no-regression tripwire

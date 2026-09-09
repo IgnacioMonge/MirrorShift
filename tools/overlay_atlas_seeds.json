@@ -1,0 +1,40 @@
+{
+  "classic": {
+    "RULES": 255,
+    "BOARD": 648,
+    "GUI_LOG": 1946,
+    "MQTT_CONNECT": 1669,
+    "MQTT_TX": 1623,
+    "DIRECT": 1923,
+    "MENU_CONFIG": 1823,
+    "MENU_LOGIC": 911,
+    "SETUP": 1855,
+    "INPUT_EDIT": 1054,
+    "SAVELOAD": 1248,
+    "RESTORE": 1890,
+    "ABOUT": 338,
+    "FILEUI": 1865,
+    "CONTROL": 1018,
+    "CONFIG": 1789,
+    "TIME_CONFIG": 1830
+  },
+  "next": {
+    "RULES": 255,
+    "BOARD": 462,
+    "GUI_LOG": 1946,
+    "MQTT_CONNECT": 1820,
+    "MQTT_TX": 1986,
+    "DIRECT": 1923,
+    "MENU_CONFIG": 1849,
+    "MENU_LOGIC": 911,
+    "SETUP": 1855,
+    "INPUT_EDIT": 1054,
+    "SAVELOAD": 1248,
+    "RESTORE": 1890,
+    "ABOUT": 7,
+    "FILEUI": 1865,
+    "CONTROL": 1018,
+    "CONFIG": 1794,
+    "TIME_CONFIG": 1830
+  }
+}

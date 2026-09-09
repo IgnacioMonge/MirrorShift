@@ -1,0 +1,51 @@
+{
+  "pipeline": 13,
+  "material": "editable-rgb333",
+  "sets": [
+    "BW-L",
+    "BW-M",
+    "BW-S"
+  ],
+  "boards": [
+    "black&white",
+    "blue3",
+    "green",
+    "brown",
+    "wood"
+  ],
+  "pieces_per_set": 12,
+  "pattern_layout": "A,B,cursorA,cursorB,selectedA,selectedB,A,B,A,B,outlineA,outlineB",
+  "editable_piece_sources": 6,
+  "bytes_per_pattern": 256,
+  "disc_diameters": {
+    "BW-L": 14,
+    "BW-M": 12,
+    "BW-S": 10
+  },
+  "bytes_per_set": 3072,
+  "piece_sets": 3,
+  "board_pattern_base": 12,
+  "board_patterns": 10,
+  "marker_pattern_base": 22,
+  "marker_patterns": 4,
+  "marker_pattern_layout": "hint,cursor,hint+cursor,selected",
+  "total_bytes": 12800,
+  "transparent_index": 227,
+  "palette_entries": 52,
+  "flash_palette_index": 159,
+  "sprite_palette_entries": 256,
+  "shimmer_mode": "per-sprite-palette-offset",
+  "shimmer_entry_sample": [
+    6,
+    3
+  ],
+  "shimmer_exit_sample": [
+    10,
+    9
+  ],
+  "shimmer_palette_offsets": {
+    "entry": 4,
+    "exit": 12
+  },
+  "source": "canonical-editable-next-rgb333-pngs"
+}
