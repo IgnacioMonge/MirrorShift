@@ -9,6 +9,8 @@ development repository.
 
 ## [Unreleased]
 
+## [1.0] - 2026-09-09
+
 This is the cumulative change set for the first Mirror Shift release.
 
 ### Added
@@ -64,8 +66,10 @@ This is the cumulative change set for the first Mirror Shift release.
 - Preserve separate Direct and MQTT ports in the Qt client, gate save/load
   commands correctly, report inactive games accurately, require Qt 6, and point
   every About view to `github.com/IgnacioMonge/MirrorShift`.
-- Restore the smooth 3D disc-conversion animation in the Qt client, removing
-  the abrupt midpoint flash and the mismatched final repaint.
+- Ease the Qt 3D disc conversion into both endpoints, removing its abrupt
+  midpoint flash, final angular jump, and mismatched final repaint.
+- Clear stale ZX and SpectraNext disc pixels after an opponent disconnects by
+  restoring NetChessZX's independent cursor and bitmap-clear render modes.
 - Separate Direct receive and transmit storage and correct fragmented input,
   readable-data draining on disconnect, timeouts, cancellation, and recovery.
 - Correct MQTT action batches, host recovery, peer-loss handling, and retries.
@@ -87,3 +91,6 @@ This is the cumulative change set for the first Mirror Shift release.
   cursor/selection visibility over discs, and setup-row restoration.
 - Include product assets, dependency notices, licence texts, and matching
   source material in the packaging flow.
+
+[Unreleased]: https://github.com/IgnacioMonge/MirrorShift/compare/mirrorshift-v1.0...HEAD
+[1.0]: https://github.com/IgnacioMonge/MirrorShift/releases/tag/mirrorshift-v1.0

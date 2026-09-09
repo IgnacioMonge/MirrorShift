@@ -2374,8 +2374,8 @@ static void handle_opponent_disconnected_with(const char *message)
     cursor_hide();
     clear_disconnected_session_state();
     edit_stop_clear();
-    spectrum_gui_hide_board_pieces();
     reset_board_moves_chat();
+    spectrum_gui_hide_board_pieces();
     restore_about_full_board_if_visible();
     spectrum_gui_set_connected(0u);
     spectrum_gui_set_status_error(message);
@@ -2405,8 +2405,8 @@ static void mqtt_peer_reset_wait_state(void)
     game_ply = 0u;
     pending_local_clear();
     spectrum_gui_game_timer_stop();
-    spectrum_gui_hide_board_pieces();
     reset_board_moves_chat();
+    spectrum_gui_hide_board_pieces();
     local_controls_reset(0u);
     restore_about_full_board_if_visible();
     spectrum_gui_set_connected(1u);

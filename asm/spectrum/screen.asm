@@ -368,6 +368,7 @@ EXTERN scaled_col
 EXTERN conn_attr
 EXTERN sprite_ptr
 EXTERN mark_mode
+EXTERN render_skip_clear
 EXTERN key_last
 EXTERN key_repeat_timer
 EXTERN key_suppress
@@ -408,6 +409,7 @@ scaled_col:   DEFS 1
 conn_attr:    DEFS 1
 sprite_ptr:   DEFS 2
 mark_mode:    DEFS 1
+render_skip_clear: DEFS 1
 key_last:     DEFS 1
 key_repeat_timer: DEFS 1
 key_suppress: DEFS 1
@@ -445,7 +447,11 @@ ENDIF
     call draw_banner_separator
     call restore_board_frame_attrs
     call draw_board_coords
+IFDEF NETCHESSZX_NEXT
+    call draw_board
+ELSE
     call draw_board_clean
+ENDIF
     jp draw_board_frame
 
 _spectrum_render_board_area:
@@ -2370,13 +2376,18 @@ dflc_no_carry:
     ld (piece_scan), a
     jr dflc_loop
 
+IFNDEF NETCHESSZX_NEXT
 draw_board_clean:
-    ld a, 1
-    jr draw_board_mode_ready
+    ld hl, render_skip_clear
+    inc (hl)
+    push hl
+    call draw_board
+    pop hl
+    dec (hl)
+    ret
+ENDIF
+
 draw_board:
-    xor a
-draw_board_mode_ready:
-    ld (mark_mode), a
     ld hl, (board_ptr)
     ld (board_iter), hl
     xor a
@@ -2576,18 +2587,14 @@ dobs_light:
 dobs_attr:
     ld d, a
     call compute_square_bc
-    ld a, (mark_mode)
-    or a
-    jr nz, dobs_pixels_ready
+IFDEF NETCHESSZX_NEXT
     push de
     push bc
     call clear_square_pixels_2x2
     pop bc
     pop de
-dobs_pixels_ready:
     ld a, d
     call set_square_attr_2x2
-IFDEF NETCHESSZX_NEXT
     call next_marker_release_current_square
     call next_draw_board_square_sprite
 
@@ -2597,11 +2604,15 @@ IFDEF NETCHESSZX_NEXT
     ld a, (piece_char)
     jr next_draw_piece_sprite_16x16
 ELSE
+    ld a, d
+    call set_square_attr_2x2
     ld a, (piece_char)
     cp ' '
-    ret z
-    ld a, (piece_char)
-    jp draw_piece_sprite_16x16
+    jp nz, draw_piece_sprite_16x16
+    ld a, (render_skip_clear)
+    or a
+    ret nz
+    jp clear_square_pixels_2x2
 ENDIF
 
 clear_square_pixels_2x2:

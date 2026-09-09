@@ -3091,7 +3091,7 @@ private:
         }
         const qreal t = static_cast<qreal>(pieceFlipStep_) /
                         static_cast<qreal>(kPieceFlipFrames);
-        const qreal angle = t * M_PI;
+        const qreal angle = t * t * (3.0 - 2.0 * t) * M_PI;
 
         for (const FlipAnim &cell : pieceFlipCells_) {
             const int displayRow = displayRowForBoard(cell.row);

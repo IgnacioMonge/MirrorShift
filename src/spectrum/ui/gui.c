@@ -992,9 +992,7 @@ void spectrum_gui_redraw_board_squares(void)
     }
     for (row = 0u; row < 8u; ++row) {
         for (col = 0u; col < 8u; ++col) {
-            if (board_pieces_visible || gui_board_cell(row, col) != '.') {
-                render_square_from_board(row, col);
-            }
+            render_square_from_board(row, col);
         }
     }
 }
