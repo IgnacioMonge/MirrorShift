@@ -1085,7 +1085,7 @@ ifeq ($(HOST_UNAME),Darwin)
 	@command -v "$(CODESIGN)" >/dev/null 2>&1 || { echo "[ERR] Missing codesign: set CODESIGN=/path/to/codesign"; exit 1; }
 	@command -v "$(DITTO)" >/dev/null 2>&1 || { echo "[ERR] Missing ditto: set DITTO=/path/to/ditto"; exit 1; }
 	@command -v "$(QTPATHS)" >/dev/null 2>&1 || { echo "[ERR] Missing qtpaths: set QTPATHS=/path/to/qtpaths"; exit 1; }
-	$(MACDEPLOYQT) "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app" -always-overwrite -no-codesign -no-plugins
+	$(MACDEPLOYQT) "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app" -always-overwrite -codesign=- -no-plugins
 	$(CMAKE) -E make_directory \
 		"$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/platforms" \
 		"$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/styles" \
@@ -1093,7 +1093,7 @@ ifeq ($(HOST_UNAME),Darwin)
 	$(CMAKE) -E copy_if_different "$$($(QTPATHS) --plugin-dir)/platforms/libqcocoa.dylib" "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/platforms/libqcocoa.dylib"
 	$(CMAKE) -E copy_if_different "$$($(QTPATHS) --plugin-dir)/styles/libqmacstyle.dylib" "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/styles/libqmacstyle.dylib"
 	$(CMAKE) -E copy_if_different "$$($(QTPATHS) --plugin-dir)/imageformats/libqjpeg.dylib" "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/imageformats/libqjpeg.dylib"
-	$(MACDEPLOYQT) "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app" -always-overwrite -no-codesign -no-plugins \
+	$(MACDEPLOYQT) "$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app" -always-overwrite -codesign=- -no-plugins \
 		-executable="$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/platforms/libqcocoa.dylib" \
 		-executable="$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/styles/libqmacstyle.dylib" \
 		-executable="$(CLIENT_CMAKE_BUILD_DIR)/MirrorShift.app/Contents/PlugIns/imageformats/libqjpeg.dylib"

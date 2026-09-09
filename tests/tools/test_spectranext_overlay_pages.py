@@ -37,6 +37,8 @@ def main() -> int:
         "defc __CPU_RABBIT__=0\ndefc __CPU_8085__=0\ndefc __Z80=1\ndefc __Z80_NMOS=1\n"
     )
     helper_dir = z88dk / "libsrc/arch/z80/z80"
+    if not helper_dir.is_dir():
+        helper_dir = z88dk / "libsrc/_DEVELOPMENT/z80/z80"
     (work / "vector.asm").write_text(
         (root / "tests/spectrum/test_spectranext_overlay_vector.asm").read_text()
         + '\ndefc __bss_user_head = ovl_handle\ndefc __bss_user_size = test_bss_tail - ovl_handle\n'

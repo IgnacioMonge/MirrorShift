@@ -50,6 +50,8 @@ This is the cumulative change set for the first Mirror Shift release.
   reads. Classic initialization delegates draining to the transport's existing
   flush; RX pumping after each TX attempt is preserved.
 - Refresh the managed ZXESPEmu launchers for the current Classic, Next, and SpectraNext builds.
+- Keep release validation compatible with the z88dk 2.4 library layout and
+  Qt 6.10 deployment tooling used by GitHub Actions.
 
 ### Removed
 
