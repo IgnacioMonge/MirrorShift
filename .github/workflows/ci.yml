@@ -28,16 +28,6 @@ jobs:
         run: apk add --no-cache python3 py3-pillow
       - name: Run full contract suite
         run: make full-check
-      - name: Checkout SpectraNext dependency
-        uses: actions/checkout@v4
-        with:
-          repository: IgnacioMonge/SpectraNext
-          ref: b4ddb817e5ac1cc0625fad771a4acf4be14bd991
-          path: SpectraNext
-          fetch-depth: 1
-      - name: Link SpectraNext cartridge
-        run: make tap-spectranext SPXN_DIR=SpectraNext/driver
-
   desktop-unix:
     name: Qt (${{ matrix.os }})
     runs-on: ${{ matrix.os }}

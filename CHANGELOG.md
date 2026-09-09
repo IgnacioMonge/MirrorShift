@@ -52,6 +52,7 @@ This is the cumulative change set for the first Mirror Shift release.
 - Refresh the managed ZXESPEmu launchers for the current Classic, Next, and SpectraNext builds.
 - Keep release validation compatible with the z88dk 2.4 library layout and
   Qt 6.10 deployment tooling used by GitHub Actions.
+- Keep public CI independent of the private SpectraNext driver checkout.
 
 ### Removed
 
