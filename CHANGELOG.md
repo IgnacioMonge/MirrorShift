@@ -7,8 +7,6 @@ development repository.
 
 ---
 
-## [Unreleased]
-
 ## [1.0] - 2026-09-09
 
 This is the cumulative change set for the first Mirror Shift release.
