@@ -1,0 +1,5 @@
+type=file name=boot.zx size=230
+type=file name=MIRSHIFT.INS size=3303
+type=file name=MIRSHIFT.PKG size=40965
+type=file name=MIRSHIFT.SCR size=6912
+type=file name=package.json size=724

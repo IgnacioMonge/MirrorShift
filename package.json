@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "name": "boot.zx",
+      "sha256": "7455a64fe175ea1bb598ba3898e84b0635d99f3084c72b46764d0a905a79d388",
+      "size": 230
+    },
+    {
+      "name": "MIRSHIFT.INS",
+      "sha256": "95d961be799cee1cd0fde532104c6bf86205d252929fdf8f93b6e4d964d884f6",
+      "size": 3303
+    },
+    {
+      "name": "MIRSHIFT.PKG",
+      "sha256": "ae9b5399ee7235f54ad365f93c9b573333bed1c06389f529154284230b27fa19",
+      "size": 40965
+    },
+    {
+      "name": "MIRSHIFT.SCR",
+      "sha256": "2849b2d84ac7c8562c4545c6bde8adc627a35f93976eb368ce64f484ff84e5c6",
+      "size": 6912
+    }
+  ],
+  "minimum_firmware": "0.9-6fc153a3",
+  "resource": "MirrorShift \u2014 online reversi for ZX Spectrum",
+  "version": "1.0"
+}
